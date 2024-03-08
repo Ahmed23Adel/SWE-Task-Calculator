@@ -1,18 +1,3 @@
-# Calculator-flask -vue
-
-
-
-
-it also shows the error while dividing on 9
-
-
-
-
-
-
-
-# Calculator-flaskl-vue
-This repository contains a basic calculator application capable of performing basic arithmetic operations. Two versions of the calculator were created:
 
 # Flask-based calculator (HTML, CSS, Flask)
 Vue-based calculator

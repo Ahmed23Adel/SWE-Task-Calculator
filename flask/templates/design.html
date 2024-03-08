@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}" />
+</head>
+
+<body>
+    <div class="calculator">
+        <h2 class="calculator-header">Simple Calculator</h2>
+        <div class="calculator-body">
+            <form action="/calculate" method="POST" class="calculator-form">
+                <div class="form-group">
+                    <label for="num1">First Number:</label>
+                    <input type="text" id="num1" name="num1" class="form-input" placeholder="Enter first number" />
+                </div>
+                <div class="form-group">
+                    <label for="num2">Second Number:</label>
+                    <input type="text" id="num2" name="num2" class="form-input" placeholder="Enter second number" />
+                </div>
+                <div class="form-group">
+                    <label for="operation">Operation:</label>
+                    <select name="operation" id="operation" class="form-input">
+                        <option value="add">Addition (+)</option>
+                        <option value="subtract">Subtraction (-)</option>
+                        <option value="multiply">Multiplication (*)</option>
+                        <option value="divide">Division (/)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Calculate</button>
+            </form>
+        </div>
+        <div class="calculator-result">
+            {% if result is not none %}
+            <p class="result-text">Result: {{ result }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+
+.calculator {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.calculator-header {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+}
+
+.calculator-body {
+    margin-bottom: 20px;
+}
+
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.calculator-result {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.result-text {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+</style>
